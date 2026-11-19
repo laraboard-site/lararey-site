@@ -1,1 +1,1 @@
-window.goatcounter=(function(){var d=navigator.doNotTrack==='1'||window.doNotTrack==='1';return{no_onload:d,no_events:d}})();
+window.goatcounter=(function(){var d=navigator.doNotTrack==='1'||window.doNotTrack==='1',o=false;o=location.pathname.indexOf('/owner/')===0;try{var r=JSON.parse(localStorage.getItem('lr_owner')||'null');if(r){if(r.gen===1){o=true;localStorage.setItem('skipgc','t')}else{localStorage.removeItem('lr_owner');localStorage.removeItem('skipgc')}}}catch(e){}return{no_onload:d||o,no_events:d||o}})();
